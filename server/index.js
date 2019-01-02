@@ -11,21 +11,21 @@ const app = express();
  * 
  */
 
-// db conn
-// const connection = mysql.createConnection({
-//     host: 'localhost',
-//     user: 'admin',
-//     password: 'password',
-//     database: 'inputDB'
-// });
+db conn
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'admin',
+    password: 'password',
+    database: 'inputDB'
+});
 
-// connection.connect(err => {
-//     if(err){
-//         console.log("Database Error: ", err);
-//         process.exit(1);
-//     }
-//     console.log("Connected To Database.");
-// })
+connection.connect(err => {
+    if(err){
+        console.log("Database Error: ", err);
+        process.exit(1);
+    }
+    console.log("Connected To Database.");
+})
 
 // Middlewares
 app.use(bodyParser.json());
