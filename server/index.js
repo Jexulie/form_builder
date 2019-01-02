@@ -11,7 +11,7 @@ const app = express();
  * 
  */
 
-db conn
+//db conn
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'admin',
