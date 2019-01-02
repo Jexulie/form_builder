@@ -11,9 +11,11 @@
       <v-btn class="pink white--text" v-on:click="newF">
         <span class="mr-2">New</span>
       </v-btn>
-      <v-btn target="_blank" v-bind:href="'localhost:3000/render/' + form_name" class="green white--text">
-        <span class="mr-2">Show-Form</span>
-      </v-btn>
+      <div>
+        <v-btn v-if="form_name !== ''" target="_blank" v-bind:href="'localhost:3000/render/' + form_name" class="green white--text">
+            <span class="mr-2">Show-Form</span>
+        </v-btn>
+      </div>
       </div>
       <br>
       <hr>
