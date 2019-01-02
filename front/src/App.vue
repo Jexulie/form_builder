@@ -8,7 +8,7 @@
           </v-flex>
           <v-layout row>
             <v-flex>
-              <Sidebar showForm="render" saveForm="save"/>
+              <Sidebar saveForm="save"/>
             </v-flex>
           </v-layout>
         </v-layout>
@@ -30,7 +30,7 @@ export default {
   },
   data () {
     return {
-      curForm: ""
+      
     }
   },
   methods: {
@@ -39,12 +39,6 @@ export default {
       axios.post("localhost:3000/save",{
         name: name,
         html: html
-      })
-    },
-    render: function(){
-      axios.post("localhost:3000/render", {name: this.curForm}).then(res => {
-        var url = res.data.html;
-        window.location.href = url;
       })
     }
   }

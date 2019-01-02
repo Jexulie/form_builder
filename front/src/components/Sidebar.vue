@@ -11,7 +11,7 @@
       <v-btn class="pink white--text" v-on:click="newF">
         <span class="mr-2">New</span>
       </v-btn>
-      <v-btn class="pink white--text" v-on:click="showF">
+      <v-btn target="_blank" v-bind:href="'localhost:3000/render/' + form_name" class="green white--text">
         <span class="mr-2">Show-Form</span>
       </v-btn>
       </div>
@@ -47,7 +47,7 @@
 <script>
     import Show from './Show'
   export default {
-    props: ['showForm', 'saveForm'],
+    props: ['saveForm'],
     components: {
         Show
     },
@@ -104,10 +104,6 @@
             this.comp_list = []
             this.html_form = ""
             this.form_name = ""
-        },
-
-        showF: function(){
-            this.showForm()
         }
     }
   }

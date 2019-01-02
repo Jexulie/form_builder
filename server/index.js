@@ -12,20 +12,20 @@ const app = express();
  */
 
 // db conn
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'admin',
-    password: 'password',
-    database: 'inputDB'
-});
+// const connection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'admin',
+//     password: 'password',
+//     database: 'inputDB'
+// });
 
-connection.connect(err => {
-    if(err){
-        console.log("Database Error: ", err);
-        process.exit(1);
-    }
-    console.log("Connected To Database.");
-})
+// connection.connect(err => {
+//     if(err){
+//         console.log("Database Error: ", err);
+//         process.exit(1);
+//     }
+//     console.log("Connected To Database.");
+// })
 
 // Middlewares
 app.use(bodyParser.json());
@@ -45,10 +45,9 @@ app.post('/newInput', (req, res) => {
     }
 });
 
-app.post('/render', (req, res) => {
-    // get html from db and render
-    var html = getFromDB(req.body.name);
-    res.json({html: html})
+app.get('/render/:id', (req, res) => {
+    var html = getFromDB(req.params.id);
+    res.send(html)
 })
 
 // db func
